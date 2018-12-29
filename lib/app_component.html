@@ -1,0 +1,56 @@
+<material-drawer persistent #drawer="drawer" [class.custom-width]="true">
+    <material-list  *deferredContent>
+        <div group class="mat-drawer-spacer"></div>
+        <div group>
+            <material-list-item>
+                <material-icon icon="inbox"></material-icon>
+                Inbox
+            </material-list-item>
+            <material-list-item>
+                <material-icon icon="star"></material-icon>
+                Star
+            </material-list-item>
+            <material-list-item>
+                <material-icon icon="send"></material-icon>
+                Sent Mail
+            </material-list-item>
+            <material-list-item>
+                <material-icon icon="drafts"></material-icon>
+                Drafts
+            </material-list-item>
+        </div>
+        <div group>
+            <div label>Tags</div>
+            <material-list-item>
+                <material-icon icon="star"></material-icon>
+                Favorites
+            </material-list-item>
+        </div>
+    </material-list>
+</material-drawer>
+<div class="material-content">
+    <header class="material-header shadow">
+        <div class="material-header-row">
+            <material-button icon
+                             class="material-drawer-button" (trigger)="drawer.toggle()">
+                <material-icon icon="menu"></material-icon>
+            </material-button>
+            <span class="material-header-title">Simple Layout</span>
+            <div class="material-spacer"></div>
+            <nav class="material-navigation">
+                <a [routerLink]="RoutePaths.login.toUrl()"
+                   [routerLinkActive]="'active'">登陆</a>
+            </nav>
+            <nav class="material-navigation">
+                <a [routerLink]="RoutePaths.signup.toUrl()"
+                   [routerLinkActive]="'active'">注册</a>
+            </nav>
+            <nav class="material-navigation">
+                <a [routerLink]="RoutePaths.signup.toUrl()"
+                   [routerLinkActive]="'active'">注销</a>
+            </nav>
+        </div>
+    </header>
+    <router-outlet [routes]="Routes.all"></router-outlet>
+</div>
+

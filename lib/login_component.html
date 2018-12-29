@@ -1,0 +1,15 @@
+<h4 *ngIf="error != null">{{error}}</h4>
+<form (ngSubmit)="login()">
+    <div class="form-group col-3">
+        <label>用户名</label>
+        <material-input type="text" name="username" class="form-control" [(ngModel)]="username"></material-input>
+    </div>
+    <div class="form-group col-3">
+        <label>密码</label>
+        <material-input type="password" name="password" class="form-control" [(ngModel)]="password"></material-input>
+    </div>
+    <div class="form-group col-3">
+        <material-button class="btn btn-primary" type="submit">登陆</material-button>
+        <material-button class="btn btn-primary">注册</material-button>
+    </div>
+</form>
